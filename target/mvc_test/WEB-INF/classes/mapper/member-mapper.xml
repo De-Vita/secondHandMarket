@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Member">
+    <insert id="save" parameterType="member" useGeneratedKeys="true" keyProperty="id">
+        insert into member_table(email, password, nickName, name, mobile, profileAttached)
+            values (#{email}, #{password}, #{nickName}, #{name}, #{mobile}, #{profileAttached})
+    </insert>
+
+    <insert id="saveFile" parameterType="memberProfile">
+        insert into member_profile_table(originalFileName, storedFileName, memberId)
+            values (#{originalFileName}, #{storedFileName}, #{memberId})
+    </insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

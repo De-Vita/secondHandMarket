@@ -12,5 +12,6 @@
 </head>
 <body>
     <h2>index</h2>
+    <%@include file="./component/nav.jsp" %>
 </body>
 </html>
