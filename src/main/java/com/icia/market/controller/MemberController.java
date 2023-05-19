@@ -1,6 +1,7 @@
 package com.icia.market.controller;
 
 import com.icia.market.dto.MemberDTO;
+import com.icia.market.service.MailSendService;
 import com.icia.market.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,8 @@ import java.io.IOException;
 public class MemberController {
     @Autowired
     MemberService memberService;
+    @Autowired
+    MailSendService mailSendService;
     @GetMapping("/save")
     public String saveForm() {
         return "memberPages/memberSave";
@@ -54,6 +57,14 @@ public class MemberController {
         } else {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
+    }
+
+    @GetMapping("/mailCheck")
+    @ResponseBody
+    public String mailCheck(String email) {
+        System.out.println("인증 요청");
+        System.out.println("인증 이메일"+email);
+        return mailSendService.joinEmail(email);
     }
 
 }
