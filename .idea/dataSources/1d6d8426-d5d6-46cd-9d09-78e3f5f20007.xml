@@ -1030,7 +1030,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="312" parent="294" name="email">
+    <column id="312" parent="294" name="account">
       <DasType>varchar(100)|0s</DasType>
       <Position>2</Position>
     </column>
@@ -1039,7 +1039,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="314" parent="294" name="nickName">
+    <column id="314" parent="294" name="nickname">
       <DasType>varchar(100)|0s</DasType>
       <Position>4</Position>
     </column>
@@ -1063,13 +1063,13 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="319" parent="294" name="email">
-      <ColNames>email</ColNames>
+    <index id="319" parent="294" name="account">
+      <ColNames>account</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="320" parent="294" name="nickName">
-      <ColNames>nickName</ColNames>
+    <index id="320" parent="294" name="nickname">
+      <ColNames>nickname</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1078,11 +1078,11 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="322" parent="294" name="email">
-      <UnderlyingIndexName>email</UnderlyingIndexName>
+    <key id="322" parent="294" name="account">
+      <UnderlyingIndexName>account</UnderlyingIndexName>
     </key>
-    <key id="323" parent="294" name="nickName">
-      <UnderlyingIndexName>nickName</UnderlyingIndexName>
+    <key id="323" parent="294" name="nickname">
+      <UnderlyingIndexName>nickname</UnderlyingIndexName>
     </key>
     <column id="324" parent="295" name="custno">
       <AutoIncrement>4</AutoIncrement>

@@ -10,11 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 @ToString
 public class MemberDTO {
     private Long id;
-    private String email;
+    private String account;
     private String password;
-    private String nickName;
+    private String nickname;
     private String name;
-    private String mobile;
+    private String email;
     private int profileAttached;
     private MultipartFile profile;
 

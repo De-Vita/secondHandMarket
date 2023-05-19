@@ -34,4 +34,12 @@ public class MemberService {
             memberRepository.saveFile(memberProfileDTO);
         }
     }
+
+    public String isAccountInUse(String account) {
+        return memberRepository.isAccountInUse(account);
+    }
+
+    public String isNicknameInUse(String nickname) {
+        return memberRepository.isNicknameInUse(nickname);
+    }
 }

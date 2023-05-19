@@ -5,14 +5,23 @@
 
 <mapper namespace="Member">
     <insert id="save" parameterType="member" useGeneratedKeys="true" keyProperty="id">
-        insert into member_table(email, password, nickName, name, mobile, profileAttached)
-            values (#{email}, #{password}, #{nickName}, #{name}, #{mobile}, #{profileAttached})
+        insert into member_table(email, password, nickname, name, mobile, profileAttached)
+            values (#{email}, #{password}, #{nickname}, #{name}, #{mobile}, #{profileAttached})
     </insert>
 
     <insert id="saveFile" parameterType="memberProfile">
         insert into member_profile_table(originalFileName, storedFileName, memberId)
             values (#{originalFileName}, #{storedFileName}, #{memberId})
     </insert>
+
+    <select id="isAccountInUse" parameterType="member" resultType="String">
+        select account from member_table where account = #{account}
+    </select>
+
+    <select id="isNicknameInUse" parameterType="member" resultType="String">
+        select nickname from member_table where nickname = #{nickname}
+    </select>
+
 </mapper>
 
 

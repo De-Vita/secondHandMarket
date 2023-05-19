@@ -18,4 +18,12 @@ public class MemberRepository {
     public void saveFile(MemberProfileDTO memberProfileDTO) {
         sql.insert("Member.saveFile", memberProfileDTO);
     }
+
+    public String isAccountInUse(String account) {
+        return sql.selectOne("Member.isAccountInUse", account);
+    }
+
+    public String isNicknameInUse(String nickname) {
+        return sql.selectOne("Member.isNicknameInUse", nickname);
+    }
 }
