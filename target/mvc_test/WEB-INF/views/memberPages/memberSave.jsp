@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/resources/js/memberSave.js"></script>
     <script src="/resources/js/mailSend.js"></script>
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<%--    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">--%>
 </head>
 <body>
     <form action="/member/save" method="post" enctype="multipart/form-data">
@@ -54,4 +54,42 @@
         <input type="submit" value="가입">
     </form>
 </body>
+<script>
+    $('#mail-Check-Btn').click(function() {
+        const eamil = $('#userEmail1').val() + $('#userEmail2').val(); // 이메일 주소값 얻어오기!
+        console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
+        const checkInput = $('.mail-check-input') // 인증번호 입력하는곳
+
+        $.ajax({
+            type : 'get',
+            url: '/member/mailCheck?email=' + encodeURIComponent(eamil),
+            success : function (data) {
+                console.log("data : " +  data);
+                checkInput.attr('disabled',false);
+                code =data;
+                alert('인증번호가 전송되었습니다.')
+            }
+        }); // end ajax
+    }); // end send eamil
+
+    // 인증번호 비교
+    // blur -> focus가 벗어나는 경우 발생
+    $('.mail-check-input').blur(function () {
+        const inputCode = $(this).val();
+        const $resultMsg = $('#mail-check-warn');
+
+        if(inputCode === code){
+            $resultMsg.html('인증번호가 일치합니다.');
+            $resultMsg.css('color','green');
+            $('#mail-Check-Btn').attr('disabled',true);
+            $('#userEamil1').attr('readonly',true);
+            $('#userEamil2').attr('readonly',true);
+            $('#userEmail2').attr('onFocus', 'this.initialSelect = this.selectedIndex');
+            $('#userEmail2').attr('onChange', 'this.selectedIndex = this.initialSelect');
+        }else{
+            $resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
+            $resultMsg.css('color','red');
+        }
+    });
+</script>
 </html>
