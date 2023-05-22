@@ -26,4 +26,8 @@ public class MemberRepository {
     public String isNicknameInUse(String nickname) {
         return sql.selectOne("Member.isNicknameInUse", nickname);
     }
+
+    public String isEmailInUse(String email) {
+        return sql.selectOne("Member.isEmailInUse", email);
+    }
 }

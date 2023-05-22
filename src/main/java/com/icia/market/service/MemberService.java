@@ -42,4 +42,8 @@ public class MemberService {
     public String isNicknameInUse(String nickname) {
         return memberRepository.isNicknameInUse(nickname);
     }
+
+    public String isEmailInUse(String email) {
+        return memberRepository.isEmailInUse(email);
+    }
 }

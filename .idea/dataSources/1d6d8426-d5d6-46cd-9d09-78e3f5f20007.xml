@@ -1048,7 +1048,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="316" parent="294" name="mobile">
+    <column id="316" parent="294" name="email">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>

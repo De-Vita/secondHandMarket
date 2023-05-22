@@ -11,10 +11,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="02_회원가입-02(중복체크,정규식 적용)">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1d6d8426-d5d6-46cd-9d09-78e3f5f20007.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1d6d8426-d5d6-46cd-9d09-78e3f5f20007.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/mailSend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/memberSave.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/memberSave.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mvc_test/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +40,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -54,26 +64,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/springframework/secondHandMarket/src/main/webapp/resources/css&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;76844054329b5e466650e9f690d1d9eb&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/springframework/secondHandMarket",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "76844054329b5e466650e9f690d1d9eb",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\springframework\secondHandMarket\src\main\webapp\resources\css" />
@@ -182,7 +193,7 @@
       <workItem from="1684456607155" duration="12017000" />
       <workItem from="1684478583836" duration="2203000" />
       <workItem from="1684481968586" duration="8806000" />
-      <workItem from="1684676746742" duration="3275000" />
+      <workItem from="1684712872422" duration="21873000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1684372349380</created>

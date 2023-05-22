@@ -25,7 +25,9 @@ public class MemberController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute MemberDTO memberDTO) throws IOException {
+        memberDTO.setEmail(memberDTO.getEmail() + memberDTO.getDomain());
         memberService.save(memberDTO);
+        System.out.println("memberDTO = " + memberDTO);
         return "index";
     }
 
@@ -59,7 +61,19 @@ public class MemberController {
         }
     }
 
-    @GetMapping("/mailCheck")
+    @PostMapping("email-check")
+    public ResponseEntity emailCheck(@RequestParam("email") String email) {
+        String Email = memberService.isEmailInUse(email);
+        if (email.length() == 0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else if (Email == null) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+    }
+
+    @GetMapping("/mailAuth")
     @ResponseBody
     public String mailCheck(String email) {
         System.out.println("인증 요청");
