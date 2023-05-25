@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @RequestMapping("/member")
@@ -114,6 +115,24 @@ public class MemberController {
         return mailSendService.joinEmail(email);
     }
 
+    @GetMapping("/login")
+    public String loginForm() {
+        return "memberPages/memberLogin";
+    }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+        boolean loginResult = memberService.login(memberDTO);
+        System.out.println(memberDTO);
+        if (loginResult) {
+            session.setAttribute("loginAccount", memberDTO.getAccount());
+            session.setAttribute("loginId", memberDTO.getId());
+            session.setAttribute("loginNickname", memberDTO.getNickname());
+            return "redirect:/";
+        } else {
+            return "redirect:/memberPages/memberLogin";
+        }
+    }
 
 
 }

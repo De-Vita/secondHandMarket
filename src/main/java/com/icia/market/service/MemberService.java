@@ -46,4 +46,13 @@ public class MemberService {
     public String isEmailInUse(String email) {
         return memberRepository.isEmailInUse(email);
     }
+
+    public boolean login(MemberDTO memberDTO) {
+        MemberDTO dto = memberRepository.login(memberDTO);
+        if (dto != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

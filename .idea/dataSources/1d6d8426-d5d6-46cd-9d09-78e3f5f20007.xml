@@ -954,7 +954,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="296" parent="292" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1025,7 +1025,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="311" parent="294" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>5</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1085,7 +1085,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <UnderlyingIndexName>nickname</UnderlyingIndexName>
     </key>
     <column id="324" parent="295" name="custno">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1107,11 +1107,11 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <Position>5</Position>
     </column>
     <column id="329" parent="295" name="grade">
-      <DasType>char(1)|0s</DasType>
+      <DasType>varchar(1)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="330" parent="295" name="city">
-      <DasType>char(2)|0s</DasType>
+      <DasType>varchar(2)|0s</DasType>
       <Position>7</Position>
     </column>
     <index id="331" parent="295" name="PRIMARY">
