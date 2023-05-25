@@ -26,6 +26,10 @@
         select email from member_table where email = #{email}
     </select>
 
+    <select id="login" parameterType="member" resultType="member">
+        select * from member_table where account = #{account} and password = #{password}
+    </select>
+
 </mapper>
 
 
