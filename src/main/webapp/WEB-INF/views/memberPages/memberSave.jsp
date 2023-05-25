@@ -14,6 +14,8 @@
 <%--    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">--%>
 </head>
 <body>
+
+
     <form action="/member/save" method="post" id="signup_form" enctype="multipart/form-data" onsubmit="return signup_check()">
         <label for="member-account">아이디 </label>
         <input type="text" name="account" id="member-account" onblur="account_check()"> <br>
@@ -42,12 +44,12 @@
                 <p id="email-check"></p>
                 </div>
                 <div class="input-group-addon">
-                    <button type="button" class="btn btn-primary" id="mail-Check-Btn">본인인증</button>
+                    <button type="button" class="btn btn-primary" id="mail-Check-Btn" disabled>본인인증</button>
                 </div>
-                <div class="mail-check-box">
-                    <input class="form-control mail-check-input" id="mail-check" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+                <div class="mail-auth-box">
+                    <input class="form-control mail-auth-input" id="mail-auth" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
                 </div>
-                <span id="mail-check-warn"></span>
+                <span id="mail-auth-warn"></span>
             </div>
         <label for="member-profile">프로필사진</label>
         <input type="file" name="profile" id="member-profile"> <br>
@@ -57,151 +59,251 @@
 <script>
 
     const account_check = () => {
-        const account = document.getElementById("member-account").value;
-        const result = document.getElementById("account-check");
-
-        return new Promise((resolve, reject) => {
-            $.ajax({
-                type: "post",
-                url: "/member/account-check",
-                data: {
-                    "account": account
-                },
-                success: function () {
-                    result.innerHTML = "사용 가능한 아이디입니다";
-                    result.style.color = "green";
-                    resolve(true); // 유효한 아이디인 경우 resolve
-                },
-                error: function (err) {
-                    console.log(err);
-                    if (err.status == 409) {
-                        result.innerHTML = "이미 사용 중인 아이디입니다.";
-                        result.style.color = "red";
-                    } else if (err.status == 400) {
-                        result.innerHTML = "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.";
-                        result.style.color = "red";
-                    } else if (err.status == 404) {
-                        result.innerHTML = "필수 정보입니다.";
-                        result.style.color = "red";
-                    }
-                    resolve(false); // 유효하지 않은 아이디인 경우 resolve
-                }
-            });
-        });
-    };
+      const account = document.getElementById("member-account").value;
+      const result = document.getElementById("account-check");
+      let pass = false;
+      $.ajax({
+          type: "post",
+          url: "/member/account-check",
+          data: {
+              "account": account
+          },
+          async : false,
+          success: function () {
+              result.innerHTML = "사용 가능한 아이디입니다";
+              result.style.color = "green";
+              pass = true;
+          },
+          error: function (err) {
+              console.log(err);
+              if (err.status == 409) {
+                  result.innerHTML = "이미 사용 중인 아이디입니다.";
+                  result.style.color = "red";
+              } else if (err.status == 400) {
+                  result.innerHTML = "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.";
+                  result.style.color = "red";
+              } else if (err.status == 404) {
+                  result.innerHTML = "필수 정보입니다.";
+                  result.style.color = "red";
+              }
+              pass = false;
+          }
+      })
+        return pass;
+    }
+    
+    // const password_check = () => {
+    //     const password = document.getElementById("member-password").value;
+    //     const passwordResult = document.getElementById("password-check");
+    //     const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+    //     if (password.length === 0) {
+    //         passwordResult.innerHTML = "필수 정보입니다";
+    //         passwordResult.style.color = "red";
+    //         return false;
+    //     } else if (password.match(exp)) {
+    //         passwordResult.innerHTML = "사용 가능한 비밀번호";
+    //         passwordResult.style.color = "green";
+    //         return true;
+    //     } else {
+    //         passwordResult.innerHTML = "8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.";
+    //         passwordResult.style.color = "red";
+    //         return false;
+    //     }
+    // }
 
     const password_check = () => {
-        const password = document.getElementById("member-password").value;
-        const passwordResult = document.getElementById("password-check");
-        const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
-        if (password.length == 0) {
-            passwordResult.innerHTML = "필수 정보입니다";
-            passwordResult.style.color = "red";
-        }else if (password.match(exp)) {
-            passwordResult.innerHTML = "사용 가능한 비밀번호";
-            passwordResult.style.color = "green";
-            return true;
-        } else {
-            passwordResult.innerHTML = "8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.";
-            passwordResult.style.color = "red";
-            return false;
-        }
+      const password = document.getElementById("member-password").value;
+      const result = document.getElementById("password-check");
+      let pass = false;
+      $.ajax({
+          type: "post",
+          url: "/member/password-check",
+          data: {
+              "password" : password
+          },
+          async: false,
+          success: function () {
+              result.innerHTML = "사용 가능한 비밀번호";
+              result.style.color = "green";
+              pass = true;
+          },
+          error: function (err) {
+              console.log(err);
+              if (err.status == 404) {
+                  result.innerHTML = "필수 정보입니다";
+                  result.style.color = "red";
+              } else if (err.status == 400) {
+                  result.innerHTML = "8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.";
+                  result.style.color = "red";
+              }
+              pass = false;
+          }
+      })
+        return pass;
     }
+    
+    // const password_confirm = () => {
+    //     const password = document.getElementById("member-password").value;
+    //     const passwordConfirm = document.getElementById("password-confirm").value;
+    //     const checkResult = document.getElementById("password-confirm-result");
+    //     if (passwordConfirm.length === 0) {
+    //         checkResult.innerHTML = "필수 정보입니다.";
+    //         checkResult.style.color = "red";
+    //         return false;
+    //     } else if (password === passwordConfirm) {
+    //         checkResult.innerHTML = "일치합니다";
+    //         checkResult.style.color = "green";
+    //         return true;
+    //     } else {
+    //         checkResult.innerHTML = "일치하지 않습니다";
+    //         checkResult.style.color = "red";
+    //         return false;
+    //     }
+    // }
 
     const password_confirm = () => {
-        const password = document.getElementById("member-password").value;
-        const passwordConfirm = document.getElementById("password-confirm").value;
-        const checkResult = document.getElementById("password-confirm-result");
-        if (passwordConfirm.length == 0) {
-            checkResult.innerHTML = "필수 정보입니다.";
-            checkResult.style.color = "red";
-            return false;
-        } else if (password == passwordConfirm) {
-            checkResult.innerHTML = "일치합니다";
-            checkResult.style.color = "green";
-            return true;
-        } else {
-            checkResult.innerHTML = "일치하지 않습니다";
-            checkResult.style.color = "red";
-            return false;
-        }
+      const password = document.getElementById("member-password").value;
+      const passwordConfirm = document.getElementById("password-confirm").value;
+      const result = document.getElementById("password-confirm-result");
+      let pass = false;
+      $.ajax({
+          type: "post",
+          url: "/member/password-confirm",
+          data: {
+              "password" : password,
+              "passwordConfirm" : passwordConfirm
+          },
+          async: false,
+          success: function () {
+              result.innerHTML = "일치합니다";
+              result.style.color = "green";
+              pass = true;
+          },
+          error: function (err) {
+              console.log(err);
+              if (err.status == 404) {
+                  result.innerHTML = "필수 정보입니다";
+                  result.style.color = "red";
+              } else if (err.status = 400) {
+                  result.innerHTML = "일치하지 않습니다";
+                  result.style.color = "red";
+              }
+              pass = false;
+          }
+      })
+        return pass;
     }
-    const nickname_check = () => {
-        const nickname = document.getElementById("member-nickname").value;
-        const result = document.getElementById("nickname-check");
 
-        return new Promise((resolve, reject) => {
-            $.ajax({
-                type: "post",
-                url: "/member/nickname-check",
-                data: {
-                    "nickname": nickname
-                },
-                success: function () {
-                    result.innerHTML = "사용 가능한 닉네임";
-                    result.style.color = "green";
-                    resolve(true); // 유효한 닉네임인 경우 resolve
-                },
-                error: function (err) {
-                    console.log(err);
-                    if (err.status == 409) {
-                        result.innerHTML = "이미 사용 중인 닉네임입니다.";
-                        result.style.color = "red";
-                    } else if (err.status == 400) {
-                        result.innerHTML = "한글, 영어, 숫자만 사용(최대 6글자)";
-                        result.style.color = "red";
-                    } else if (err.status == 404) {
-                        result.innerHTML = "필수 정보입니다.";
-                        result.style.color = "red";
-                    }
-                    resolve(false); // 유효하지 않은 닉네임인 경우 resolve
+    const nickname_check = () => {
+      const nickname = document.getElementById("member-nickname").value;
+      const result = document.getElementById("nickname-check");
+      let pass = false;
+        $.ajax({
+            type: "post",
+            url: "/member/nickname-check",
+            data: {
+                "nickname": nickname
+            },
+            async: false,
+            success: function () {
+                result.innerHTML = "사용 가능한 닉네임";
+                result.style.color = "green";
+                pass = true;
+            },
+            error: function (err) {
+                console.log(err);
+                if (err.status == 409) {
+                    result.innerHTML = "이미 사용 중인 닉네임입니다.";
+                    result.style.color = "red";
+                } else if (err.status == 400) {
+                    result.innerHTML = "한글, 영어, 숫자만 사용(최대 6글자)";
+                    result.style.color = "red";
+                } else if (err.status == 404) {
+                    result.innerHTML = "필수 정보입니다.";
+                    result.style.color = "red";
                 }
-            });
+                pass = false;
+            }
         });
-    };
+        return pass;
+    }
+    
+    // const name_check = () => {
+    //     const name = document.getElementById("member-name").value;
+    //     const result = document.getElementById("name-check");
+    //     const exp = /^[가-힣a-zA-Z]*$/;
+    //     if (name.length === 0) {
+    //         result.innerHTML = "필수 정보입니다";
+    //         result.style.color = "red";
+    //         return false;
+    //     } else if (name.match(exp)) {
+    //         result.innerHTML = "";
+    //         return true;
+    //     } else {
+    //         result.innerHTML = "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)";
+    //         result.style.color = "red";
+    //         return false;
+    //     }
+    // }
+
     const name_check = () => {
-        const name = document.getElementById("member-name").value;
-        const result = document.getElementById("name-check");
-        const exp = /^[가-힣a-zA-Z]*$/;
-        if (name.length == 0) {
-            result.innerHTML = "필수 정보입니다";
-            result.style.color = "red";
-            return false;
-        } else if (name.match(exp)) {
-            result.innerHTML = "";
-            return true;
-        } else {
-            result.innerHTML = "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)";
-            result.style.color = "red";
-            return false;
-        }
+      const name = document.getElementById("member-name").value;
+      const result = document.getElementById("name-check");
+      let pass = true;
+      $.ajax({
+          type: "post",
+          url: "/member/name-check",
+          data: {
+              "name" : name
+          },
+          async: false,
+          success: function () {
+              result.innerHTML = "";
+              pass = true;
+          },
+          error: function (err) {
+              console.log(err);
+              if (err.status == 404) {
+                  result.innerHTML = "필수 정보입니다";
+                  result.style.color = "red";
+              } else if (err.status == 400) {
+                  result.innerHTML = "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)";
+                  result.style.color = "red";
+              }
+              pass = false;
+          }
+      })
+        return pass;
     }
 
     const email_check = () => {
         const email = document.getElementById("member-email").value;
         const domain = document.getElementById("member-domain").value;
         const result = document.getElementById("email-check");
+        const mailCheckBtn = document.getElementById("mail-Check-Btn");
+        let pass = false;
 
         // 이메일 필드가 비어 있는 경우 처리
         if (email.trim() === '') {
             result.innerHTML = "이메일을 입력해주세요";
             result.style.color = "red";
-            return Promise.resolve(false);
+            mailCheckBtn.disabled = true; // 본인인증 버튼 비활성화
         }
 
         // 이메일 주소 구성
         const fullEmail = email + domain;
-
-        return new Promise((resolve, reject) => {
             $.ajax({
                 type: "post",
                 url: "/member/email-check",
                 data: {
                     "email": fullEmail
                 },
+                async: false,
                 success: function () {
                     result.innerHTML = "";
-                    resolve(true); // 유효한 이메일인 경우 resolve
+                    result.style.color = "green";
+                    mailCheckBtn.disabled = false; // 본인인증 버튼 활성화
+                    pass = true;
                 },
                 error: function (err) {
                     console.log(err);
@@ -212,69 +314,31 @@
                         result.innerHTML = "사용 중인 이메일입니다";
                         result.style.color = "red";
                     }
-                    resolve(false); // 유효하지 않은 이메일인 경우 resolve
+                    mailCheckBtn.disabled = true; // 본인인증 버튼 비활성화
+                    pass = false;
                 }
             });
-        });
-    };
+            return pass;
+    }
+    
+
+    // const signup_check = () => {
+    //   const account = document.getElementById("member-account");
+    //   const password = document.getElementById("member-password");
+    //   const passwordConfirm = document.getElementById("password-confirm");
+    //   const nickname = document.getElementById("member-nickname");
+    //   const name = document.getElementById("member-name");
+    //   const email = document.getElementById("member-email");
+    //
+    // }
 
 
-
-    const signup_check = () => {
-        const account = document.getElementById("member-account");
-        const password = document.getElementById("member-password");
-        const passwordConfirm = document.getElementById("password-confirm");
-        const nickname = document.getElementById("member-nickname");
-        const name = document.getElementById("member-name");
-        const email = document.getElementById("member-email");
-
-        Promise.all([account_check(), nickname_check(), email_check()])
-            .then(([accountValid, nicknameValid, emailValid]) => {
-                if (!accountValid) {
-                    account.focus();
-                    return false;
-                }
-                if (!nicknameValid) {
-                    nickname.focus();
-                    return false;
-                }
-                if (!emailValid) {
-                    email.focus();
-                    return false;
-                }
-
-                return password_check();
-            })
-            .then(passwordValid => {
-                if (!passwordValid) {
-                    password.focus();
-                    return false;
-                }
-
-                return name_check();
-            })
-            .then(nameValid => {
-                if (!nameValid) {
-                    name.focus();
-                    return false;
-                }
-
-                // 폼 제출
-                document.getElementById("signup_form").submit();
-            })
-            .catch(error => {
-                console.error(error);
-                return false;
-            });
-
-        return false; // 폼 제출 방지
-    };
 
 
     $('#mail-Check-Btn').click(function() {
         const eamil = $('#member-email').val() + $('#member-domain').val(); // 이메일 주소값 얻어오기!
         console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
-        const checkInput = $('.mail-check-input') // 인증번호 입력하는곳
+        const checkInput = $('.mail-auth-input') // 인증번호 입력하는곳
 
         $.ajax({
             type : 'get',
@@ -287,12 +351,15 @@
             }
         }); // end ajax
     }); // end send eamil
+    
+
+    let isCodeValid = false;
 
     // 인증번호 비교
     // blur -> focus가 벗어나는 경우 발생
-    $('.mail-check-input').blur(function () {
+    $('.mail-auth-input').blur(function () {
         const inputCode = $(this).val();
-        const $resultMsg = $('#mail-check-warn');
+        const $resultMsg = $('#mail-auth-warn');
 
         if(inputCode === code){
             $resultMsg.html('인증번호가 일치합니다.');
@@ -302,10 +369,38 @@
             $('#member-domain').attr('readonly',true);
             $('#member-domain').attr('onFocus', 'this.initialSelect = this.selectedIndex');
             $('#member-domain').attr('onChange', 'this.selectedIndex = this.initialSelect');
+            isCodeValid = true;
         }else{
-            $resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
+            $resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!');
             $resultMsg.css('color','red');
+            isCodeValid = false;
         }
     });
+
+    const signup_check = () => {
+        console.log(isCodeValid);
+        // 각 필드의 유효성 검사 함수 호출
+        const isAccountValid = account_check();
+        const isPasswordValid = password_check();
+        const isPasswordConfirmValid = password_confirm();
+        const isNicknameValid = nickname_check();
+        const isNameValid = name_check();
+        const isEmailValid = email_check();
+
+        if (
+            isAccountValid &&
+            isPasswordValid &&
+            isPasswordConfirmValid &&
+            isNicknameValid &&
+            isNameValid &&
+            isEmailValid &&
+            isCodeValid
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
 </script>
 </html>

@@ -46,6 +46,28 @@ public class MemberController {
         }
     }
 
+    @PostMapping("/password-check")
+    public ResponseEntity passwordCheck(@RequestParam("password") String password) {
+        if (password.length() == 0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$")) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+    }
+
+    @PostMapping("/password-confirm")
+    public ResponseEntity passwordConfirm(@RequestParam("password") String password, @RequestParam("passwordConfirm") String passwordConfirm) {
+        if (passwordConfirm.length() == 0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else if (password.equals(passwordConfirm)) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @PostMapping("/nickname-check")
     public ResponseEntity nicknameCheck(@RequestParam("nickname") String nickname) {
         System.out.println("nickname = " + nickname);
@@ -58,6 +80,17 @@ public class MemberController {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+    }
+
+    @PostMapping("/name-check")
+    public ResponseEntity nameCheck(@RequestParam("name") String name) {
+        if (name.length() == 0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else if (!name.matches("^[가-힣a-zA-Z]*$")) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(HttpStatus.OK);
         }
     }
 
@@ -80,5 +113,7 @@ public class MemberController {
         System.out.println("인증 이메일"+email);
         return mailSendService.joinEmail(email);
     }
+
+
 
 }
