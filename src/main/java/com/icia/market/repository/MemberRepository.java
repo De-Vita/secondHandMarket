@@ -31,6 +31,7 @@ public class MemberRepository {
         return sql.selectOne("Member.isEmailInUse", email);
     }
 
+
     public MemberDTO login(MemberDTO memberDTO) {
         return sql.selectOne("Member.login", memberDTO);
     }

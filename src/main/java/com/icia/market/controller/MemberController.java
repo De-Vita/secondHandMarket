@@ -122,17 +122,21 @@ public class MemberController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
-        boolean loginResult = memberService.login(memberDTO);
-        System.out.println(memberDTO);
-        if (loginResult) {
-            session.setAttribute("loginAccount", memberDTO.getAccount());
-            session.setAttribute("loginId", memberDTO.getId());
-            session.setAttribute("loginNickname", memberDTO.getNickname());
+        MemberDTO dto = memberService.login(memberDTO);
+        if (dto != null) {
+            session.setAttribute("loginId", dto.getId());
+            session.setAttribute("loginAccount", dto.getAccount());
+            session.setAttribute("loginNickname", dto.getNickname());
             return "redirect:/";
         } else {
             return "redirect:/memberPages/memberLogin";
         }
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
+    }
 
 }
