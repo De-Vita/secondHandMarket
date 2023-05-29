@@ -9,13 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)">
+    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="08_save 메소드 수정(프로필 기본 이미지 설정)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/component/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/component/nav.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/component/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/component/nav.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +193,7 @@
       <workItem from="1684712872422" duration="22155000" />
       <workItem from="1684798802085" duration="19723000" />
       <workItem from="1684972012035" duration="17589000" />
-      <workItem from="1685261092717" duration="22327000" />
+      <workItem from="1685261092717" duration="25178000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1684372349380</created>
@@ -284,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685349999285</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="08_save 메소드 수정(프로필 기본 이미지 설정)">
+      <created>1685350649011</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685350649011</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +311,7 @@
     <MESSAGE value="05_마이페이지" />
     <MESSAGE value="06_회원탈퇴 기능" />
     <MESSAGE value="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)" />
-    <option name="LAST_COMMIT_MESSAGE" value="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)" />
+    <MESSAGE value="08_save 메소드 수정(프로필 기본 이미지 설정)" />
+    <option name="LAST_COMMIT_MESSAGE" value="08_save 메소드 수정(프로필 기본 이미지 설정)" />
   </component>
 </project>

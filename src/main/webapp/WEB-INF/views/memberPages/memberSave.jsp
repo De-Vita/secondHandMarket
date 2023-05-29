@@ -17,7 +17,7 @@
 
 </head>
 <body>
-
+<%@include file="../component/nav.jsp" %>
 <form action="/member/save" method="post" id="signup_form" enctype="multipart/form-data"
       onsubmit="return signup_check()" class="container">
     <div class="custom-file">
