@@ -252,7 +252,7 @@
     const name_check = () => {
         const name = document.getElementById("member-name").value;
         const result = document.getElementById("name-check");
-        let pass = true;
+        let pass = false;
         $.ajax({
             type: "post",
             url: "/member/name-check",
