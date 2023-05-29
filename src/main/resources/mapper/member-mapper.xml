@@ -5,8 +5,8 @@
 
 <mapper namespace="Member">
     <insert id="save" parameterType="member" useGeneratedKeys="true" keyProperty="id">
-        insert into member_table(account, password, nickname, name, email, profileAttached)
-            values (#{account}, #{password}, #{nickname}, #{name}, #{email}, #{profileAttached})
+        insert into member_table(account, password, nickname, name, email)
+            values (#{account}, #{password}, #{nickname}, #{name}, #{email})
     </insert>
 
     <insert id="saveFile" parameterType="memberProfile">
@@ -45,6 +45,12 @@
     <delete id="deleteProfile" parameterType="Long">
         delete from member_profile_table where memberId = #{id}
     </delete>
+    
+    <update id="update" parameterType="member" useGeneratedKeys="true" keyProperty="id">
+        update member_table set nickname = #{nickname}, name = #{name} where id = #{id}
+    </update>
+
+
     
 </mapper>
 

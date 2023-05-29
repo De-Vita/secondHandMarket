@@ -16,7 +16,6 @@ public class MemberDTO {
     private String name;
     private String email;
     private String domain;
-    private int profileAttached;
     private MultipartFile profile;
 
 }

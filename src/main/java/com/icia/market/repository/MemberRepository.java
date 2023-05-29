@@ -51,4 +51,9 @@ public class MemberRepository {
     public void deleteProfile(Long loginId) {
         sql.delete("Member.deleteProfile", loginId);
     }
+
+    public MemberDTO update(MemberDTO memberDTO) {
+        sql.update("Member.update", memberDTO);
+        return memberDTO;
+    }
 }

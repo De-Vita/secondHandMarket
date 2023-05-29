@@ -46,14 +46,18 @@
             <td>${member.email}</td>
         </tr>
     </table>
+    <button class="btn btn-light" onclick="updateMember()">수정하기</button>
     <button class="btn btn-danger" onclick="leaveMembership()">탈퇴하기</button>
 </div>
 </body>
 <script>
     const leaveMembership = () => {
       if (window.confirm("탈퇴하시겠습니까?")) {
-          location.href = "/member/leave"
+          location.href = "/member/leave";
       }
+    }
+    const updateMember = () => {
+      location.href = "/member/update";
     }
 </script>
 </html>

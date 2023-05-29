@@ -1025,7 +1025,7 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="311" parent="294" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1053,73 +1053,68 @@ db_springframework|schema||user_springframework|localhost|UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="317" parent="294" name="profileAttached">
-      <DasType>int|0s</DasType>
-      <DefaultExpression>0</DefaultExpression>
-      <Position>7</Position>
-    </column>
-    <index id="318" parent="294" name="PRIMARY">
+    <index id="317" parent="294" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="319" parent="294" name="account">
+    <index id="318" parent="294" name="account">
       <ColNames>account</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="320" parent="294" name="nickname">
+    <index id="319" parent="294" name="nickname">
       <ColNames>nickname</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="321" parent="294" name="PRIMARY">
+    <key id="320" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="322" parent="294" name="account">
+    <key id="321" parent="294" name="account">
       <UnderlyingIndexName>account</UnderlyingIndexName>
     </key>
-    <key id="323" parent="294" name="nickname">
+    <key id="322" parent="294" name="nickname">
       <UnderlyingIndexName>nickname</UnderlyingIndexName>
     </key>
-    <column id="324" parent="295" name="custno">
+    <column id="323" parent="295" name="custno">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="325" parent="295" name="custname">
+    <column id="324" parent="295" name="custname">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="326" parent="295" name="phone">
+    <column id="325" parent="295" name="phone">
       <DasType>varchar(13)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="327" parent="295" name="address">
+    <column id="326" parent="295" name="address">
       <DasType>varchar(60)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="328" parent="295" name="joindate">
+    <column id="327" parent="295" name="joindate">
       <DasType>date|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="329" parent="295" name="grade">
+    <column id="328" parent="295" name="grade">
       <DasType>varchar(1)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="330" parent="295" name="city">
+    <column id="329" parent="295" name="city">
       <DasType>varchar(2)|0s</DasType>
       <Position>7</Position>
     </column>
-    <index id="331" parent="295" name="PRIMARY">
+    <index id="330" parent="295" name="PRIMARY">
       <ColNames>custno</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="332" parent="295" name="PRIMARY">
+    <key id="331" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

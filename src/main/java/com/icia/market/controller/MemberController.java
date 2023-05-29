@@ -159,4 +159,23 @@ public class MemberController {
         return "redirect:/member/logout";
     }
 
+    @GetMapping("/update")
+    public String updateForm(HttpSession session, Model model) {
+        Long loginId = (Long) session.getAttribute("loginId");
+        MemberDTO memberDTO = memberService.findById(loginId);
+        MemberProfileDTO memberProfileDTO = memberService.findFile(loginId);
+        model.addAttribute("member", memberDTO);
+        model.addAttribute("memberProfile", memberProfileDTO);
+        return "memberPages/memberUpdate";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO, Model model) throws IOException {
+        System.out.println("memberDTO = " + memberDTO);
+        memberService.update(memberDTO);
+        MemberDTO updateMember = memberService.findById(memberDTO.getId());
+        model.addAttribute("member", updateMember);
+        return "redirect:/member/mypage";
+    }
+
 }

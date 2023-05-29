@@ -15,13 +15,6 @@ public class MemberService {
     @Autowired
     MemberRepository memberRepository;
     public void save(MemberDTO memberDTO) throws IOException {
-        if (memberDTO.getProfile().isEmpty()) {
-            System.out.println("파일X");
-            memberDTO.setProfileAttached(0);
-            memberRepository.save(memberDTO);
-        } else {
-            System.out.println("파일O");
-            memberDTO.setProfileAttached(1);
             MemberDTO dto = memberRepository.save(memberDTO);
             String originalFilename = memberDTO.getProfile().getOriginalFilename();
             String storedFilename = UUID.randomUUID().toString() + "-" + originalFilename;
@@ -33,7 +26,6 @@ public class MemberService {
             memberDTO.getProfile().transferTo(new File(savePath));
             memberRepository.saveFile(memberProfileDTO);
         }
-    }
 
     public String isAccountInUse(String account) {
         return memberRepository.isAccountInUse(account);
@@ -66,5 +58,20 @@ public class MemberService {
 
     public void deleteProfile(Long loginId) {
         memberRepository.deleteProfile(loginId);
+    }
+
+    public void update(MemberDTO memberDTO) throws IOException {
+        MemberDTO dto = memberRepository.update(memberDTO);
+        memberRepository.deleteProfile(memberDTO.getId());
+        System.out.println(memberDTO.getId());
+        String originalFilename = memberDTO.getProfile().getOriginalFilename();
+        String storedFilename = UUID.randomUUID().toString() + "-" + originalFilename;
+        MemberProfileDTO memberProfileDTO = new MemberProfileDTO();
+        memberProfileDTO.setOriginalFileName(originalFilename);
+        memberProfileDTO.setStoredFileName(storedFilename);
+        memberProfileDTO.setMemberId(dto.getId());
+        memberRepository.saveFile(memberProfileDTO);
+        String savePath = "C:\\springframework_img\\" + storedFilename;
+        memberDTO.getProfile().transferTo(new File(savePath));
     }
 }
