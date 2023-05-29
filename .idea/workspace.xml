@@ -9,19 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="10_회원 정보 수정 기능-2_유효성 검사(닉네임, 이름)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/member-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/mapper/member-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,7 +185,7 @@
       <workItem from="1684712872422" duration="22155000" />
       <workItem from="1684798802085" duration="19723000" />
       <workItem from="1684972012035" duration="17589000" />
-      <workItem from="1685261092717" duration="42862000" />
+      <workItem from="1685261092717" duration="43121000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1684372349380</created>
@@ -311,7 +299,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685371167511</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)">
+      <created>1685383027468</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685383027468</updated>
+    </task>
+    <task id="LOCAL-00018" summary="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)">
+      <created>1685383064396</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685383064396</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +334,7 @@
     <MESSAGE value="08_save 메소드 수정(프로필 기본 이미지 설정)" />
     <MESSAGE value="09_nav bootstrap 적용" />
     <MESSAGE value="10_회원 정보 수정 기능-2_유효성 검사(닉네임, 이름)" />
-    <option name="LAST_COMMIT_MESSAGE" value="10_회원 정보 수정 기능-2_유효성 검사(닉네임, 이름)" />
+    <MESSAGE value="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)" />
+    <option name="LAST_COMMIT_MESSAGE" value="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)" />
   </component>
 </project>
