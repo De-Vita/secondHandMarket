@@ -32,6 +32,10 @@
             <td>${member.account}</td>
         </tr>
         <tr>
+            <th>비밀번호</th>
+            <td><button onclick="updatePass()">수정</button></td>
+        </tr>
+        <tr>
             <th>닉네임</th>
             <td>${member.nickname}</td>
         </tr>
@@ -56,6 +60,9 @@
     }
     const updateMember = () => {
       location.href = "/member/update";
+    }
+    const updatePass = () => {
+      location.href = "/member/updatePass";
     }
 </script>
 </html>

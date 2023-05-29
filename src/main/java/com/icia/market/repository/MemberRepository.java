@@ -56,4 +56,8 @@ public class MemberRepository {
         sql.update("Member.update", memberDTO);
         return memberDTO;
     }
+
+    public void updatePass(MemberDTO memberDTO) {
+        sql.update("Member.updatePass", memberDTO);
+    }
 }

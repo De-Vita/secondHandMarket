@@ -178,4 +178,22 @@ public class MemberController {
         return "redirect:/member/mypage";
     }
 
+    @GetMapping("/updatePass")
+    public String updatePassForm(HttpSession session, Model model) {
+        Long loginId = (Long) session.getAttribute("loginId");
+        MemberDTO memberDTO = memberService.findById(loginId);
+        model.addAttribute("member", memberDTO);
+        return "memberPages/memberPassUpdate";
+    }
+
+    @PostMapping("/updatePass")
+    public String updatePass(HttpSession session, @RequestParam("password") String password) throws IOException {
+        Long loginId = (Long) session.getAttribute("loginId");
+        MemberDTO memberDTO = memberService.findById(loginId);
+        memberDTO.setPassword(password);
+        memberService.updatePass(memberDTO);
+        return "redirect:/member/mypage";
+    }
+
+
 }

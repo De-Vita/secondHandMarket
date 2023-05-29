@@ -89,4 +89,8 @@ public class MemberService {
         String savePath = "C:\\springframework_img\\" + storedFilename;
         memberDTO.getProfile().transferTo(new File(savePath));
     }
+
+    public void updatePass(MemberDTO memberDTO) {
+        memberRepository.updatePass(memberDTO);
+    }
 }

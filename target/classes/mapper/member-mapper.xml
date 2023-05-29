@@ -50,6 +50,10 @@
         update member_table set nickname = #{nickname}, name = #{name} where id = #{id}
     </update>
 
+    <update id="updatePass" parameterType="member">
+        update member_table set password = #{password} where id = #{id}
+    </update>
+
 
     
 </mapper>
