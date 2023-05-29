@@ -9,17 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="03_로그인 &amp; 로그아웃 기능-2(완료)">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-22__8_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-22__8_47__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26__5_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26__5_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26__8_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26__8_47__Changes_.xml" afterDir="false" />
+    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="05_마이페이지">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/component/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/component/nav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/repository/MemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/member-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/repository/MemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/mapper/member-mapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +199,7 @@
       <workItem from="1684712872422" duration="22155000" />
       <workItem from="1684798802085" duration="19723000" />
       <workItem from="1684972012035" duration="17589000" />
-      <workItem from="1685261092717" duration="7459000" />
+      <workItem from="1685261092717" duration="9571000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1684372349380</created>
@@ -260,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685059409624</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="05_마이페이지">
+      <created>1685323397256</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685323397256</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +286,7 @@
     <MESSAGE value="02_회원가입-05(회원가입 onsubmit 수정)" />
     <MESSAGE value="02_회원가입-06(유효성 검사 완료)" />
     <MESSAGE value="03_로그인 &amp; 로그아웃 기능-2(완료)" />
-    <option name="LAST_COMMIT_MESSAGE" value="03_로그인 &amp; 로그아웃 기능-2(완료)" />
+    <MESSAGE value="05_마이페이지" />
+    <option name="LAST_COMMIT_MESSAGE" value="05_마이페이지" />
   </component>
 </project>

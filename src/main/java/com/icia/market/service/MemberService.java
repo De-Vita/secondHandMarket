@@ -59,4 +59,12 @@ public class MemberService {
     public MemberProfileDTO findFile(Long loginId) {
         return memberRepository.findFile(loginId);
     }
+
+    public void delete(Long loginId) {
+        memberRepository.delete(loginId);
+    }
+
+    public void deleteProfile(Long loginId) {
+        memberRepository.deleteProfile(loginId);
+    }
 }

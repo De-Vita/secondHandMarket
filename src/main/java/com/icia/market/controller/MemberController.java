@@ -151,4 +151,12 @@ public class MemberController {
         return "memberPages/memberDetail";
     }
 
+    @GetMapping("/leave")
+    public String leave(HttpSession session) {
+        Long loginId = (Long) session.getAttribute("loginId");
+        memberService.delete(loginId);
+        memberService.deleteProfile(loginId);
+        return "redirect:/member/logout";
+    }
+
 }

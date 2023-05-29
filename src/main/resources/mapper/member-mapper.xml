@@ -37,6 +37,15 @@
     <select id="findFile" parameterType="Long" resultType="memberProfile">
         select * from member_profile_table where memberId = #{id}
     </select>
+    
+    <delete id="delete" parameterType="Long">
+        delete from member_table where id = #{id}
+    </delete>
+
+    <delete id="deleteProfile" parameterType="Long">
+        delete from member_profile_table where memberId = #{id}
+    </delete>
+    
 </mapper>
 
 
