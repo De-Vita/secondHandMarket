@@ -15,6 +15,8 @@ public class MemberService {
     @Autowired
     MemberRepository memberRepository;
     public void save(MemberDTO memberDTO) throws IOException {
+        if (memberDTO.getProfile() != null && !memberDTO.getProfile().isEmpty()) {
+            // 파일 선택한 경우
             MemberDTO dto = memberRepository.save(memberDTO);
             String originalFilename = memberDTO.getProfile().getOriginalFilename();
             String storedFilename = UUID.randomUUID().toString() + "-" + originalFilename;
@@ -25,7 +27,20 @@ public class MemberService {
             String savePath = "C:\\springframework_img\\" + storedFilename;
             memberDTO.getProfile().transferTo(new File(savePath));
             memberRepository.saveFile(memberProfileDTO);
+        } else {
+            // 파일을 선택하지 않은 경우
+            MemberDTO dto = memberRepository.save(memberDTO);
+            // 기본 이미지 설정
+            String defaultImageFilename = "기본이미지.png";
+            MemberProfileDTO memberProfileDTO = new MemberProfileDTO();
+            memberProfileDTO.setOriginalFileName(defaultImageFilename);
+            memberProfileDTO.setStoredFileName(defaultImageFilename);
+            memberProfileDTO.setMemberId(dto.getId());
+            String savePath = "C:\\springframework_img\\" + "기본이미지.png";
+            memberDTO.getProfile().transferTo(new File(savePath));
+            memberRepository.saveFile(memberProfileDTO);
         }
+    }
 
     public String isAccountInUse(String account) {
         return memberRepository.isAccountInUse(account);

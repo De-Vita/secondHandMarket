@@ -9,28 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="06_회원탈퇴 기능">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1d6d8426-d5d6-46cd-9d09-78e3f5f20007.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1d6d8426-d5d6-46cd-9d09-78e3f5f20007.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-22__8_47__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-22_오전_8_47_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/dto/MemberDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/repository/MemberRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/icia/market/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/icia/market/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/member-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/repository/MemberRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/com/icia/market/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/classes/mapper/member-mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mvc_test/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +191,7 @@
       <workItem from="1684712872422" duration="22155000" />
       <workItem from="1684798802085" duration="19723000" />
       <workItem from="1684972012035" duration="17589000" />
-      <workItem from="1685261092717" duration="21538000" />
+      <workItem from="1685261092717" duration="22327000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1684372349380</created>
@@ -285,7 +270,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685326087313</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)">
+      <created>1685349996670</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685349996670</updated>
+    </task>
+    <task id="LOCAL-00013" summary="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)">
+      <created>1685349999285</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685349999285</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +301,7 @@
     <MESSAGE value="03_로그인 &amp; 로그아웃 기능-2(완료)" />
     <MESSAGE value="05_마이페이지" />
     <MESSAGE value="06_회원탈퇴 기능" />
-    <option name="LAST_COMMIT_MESSAGE" value="06_회원탈퇴 기능" />
+    <MESSAGE value="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)" />
+    <option name="LAST_COMMIT_MESSAGE" value="07_회원정보 수정 기능-1(프로필, 닉네임, 이름)" />
   </component>
 </project>

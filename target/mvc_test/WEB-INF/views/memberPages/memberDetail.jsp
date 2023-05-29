@@ -25,7 +25,7 @@
         <tr>
             <th>프로필</th>
             <td>
-                <img src="${pageContext.request.contextPath}/upload/${memberProfile.storedFileName}"
+                <img src="${pageContext.request.contextPath}/upload/${memberProfile != null ? memberProfile.storedFileName : '기본이미지.png'}"
                      alt="profile" class="profile-img">
             </td>
         </tr>
