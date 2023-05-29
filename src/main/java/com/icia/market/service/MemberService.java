@@ -29,7 +29,7 @@ public class MemberService {
             memberProfileDTO.setOriginalFileName(originalFilename);
             memberProfileDTO.setStoredFileName(storedFilename);
             memberProfileDTO.setMemberId(dto.getId());
-            String savePath = "D:\\springframework_img\\" + storedFilename;
+            String savePath = "C:\\springframework_img\\" + storedFilename;
             memberDTO.getProfile().transferTo(new File(savePath));
             memberRepository.saveFile(memberProfileDTO);
         }
@@ -50,5 +50,13 @@ public class MemberService {
 
     public MemberDTO login(MemberDTO memberDTO) {
         return memberRepository.login(memberDTO);
+    }
+
+    public MemberDTO findById(Long loginId) {
+        return memberRepository.findById(loginId);
+    }
+
+    public MemberProfileDTO findFile(Long loginId) {
+        return memberRepository.findFile(loginId);
     }
 }

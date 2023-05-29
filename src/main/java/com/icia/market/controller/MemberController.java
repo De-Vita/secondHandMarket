@@ -1,12 +1,14 @@
 package com.icia.market.controller;
 
 import com.icia.market.dto.MemberDTO;
+import com.icia.market.dto.MemberProfileDTO;
 import com.icia.market.service.MailSendService;
 import com.icia.market.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -137,6 +139,16 @@ public class MemberController {
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:/";
+    }
+
+    @GetMapping("/mypage")
+    public String mypage(HttpSession session, Model model) {
+        Long loginId = (Long) session.getAttribute("loginId");
+        MemberDTO memberDTO = memberService.findById(loginId);
+        model.addAttribute("member", memberDTO);
+        MemberProfileDTO memberProfileDTO = memberService.findFile(loginId);
+        model.addAttribute("memberProfile", memberProfileDTO);
+        return "memberPages/memberDetail";
     }
 
 }

@@ -30,6 +30,13 @@
         select * from member_table where account = #{account} and password = #{password}
     </select>
 
+    <select id="findById" parameterType="Long" resultType="member">
+        select * from member_table where id = #{id}
+    </select>
+
+    <select id="findFile" parameterType="Long" resultType="memberProfile">
+        select * from member_profile_table where memberId = #{id}
+    </select>
 </mapper>
 
 

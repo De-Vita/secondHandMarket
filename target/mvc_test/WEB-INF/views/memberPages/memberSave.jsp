@@ -21,8 +21,7 @@
 <form action="/member/save" method="post" id="signup_form" enctype="multipart/form-data"
       onsubmit="return signup_check()" class="container">
     <div class="custom-file">
-        <img id="preview" src="	data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgA…zbd/obwGuomOMmTLiDvQ/zGymoxuV69cAAAAASUVORK5CYII=
-" alt="Preview Image" style="display: none; max-width: 200px; margin-top: 10px;">
+        <img id="preview" src="" alt="Preview Image" style="display: none; max-width: 200px; margin-top: 10px;">
         <label for="member-profile" class="btn btn-primary">프로필 선택</label>
         <input type="file" name="profile" id="member-profile" style="display: none;" onchange="previewImage(event)">
     </div>

@@ -18,6 +18,7 @@
             <c:choose>
                 <c:when test="${sessionScope.loginAccount != null}">
                     <p>${sessionScope.loginNickname}님</p>
+                    <a href="/member/mypage">mypage</a>
                     <a href="/member/logout">logout</a>
                 </c:when>
                 <c:otherwise>
