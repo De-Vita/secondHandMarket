@@ -93,4 +93,8 @@ public class MemberService {
     public void updatePass(MemberDTO memberDTO) {
         memberRepository.updatePass(memberDTO);
     }
+
+    public void updateEmail(MemberDTO memberDTO) {
+        memberRepository.updateEmail(memberDTO);
+    }
 }

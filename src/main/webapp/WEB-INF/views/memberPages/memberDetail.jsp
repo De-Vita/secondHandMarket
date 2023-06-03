@@ -45,7 +45,7 @@
         </tr>
         <tr>
             <th>이메일</th>
-            <td>${member.email}</td>
+            <td>${member.email} <button onclick="updateEmail()">수정</button></td>
         </tr>
     </table>
     <button class="btn btn-light" onclick="updateMember()">수정하기</button>
@@ -63,6 +63,9 @@
     }
     const updatePass = () => {
       location.href = "/member/updatePass";
+    }
+    const updateEmail = () => {
+      location.href = "/member/updateEmail";
     }
 </script>
 </html>

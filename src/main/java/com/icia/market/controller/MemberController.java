@@ -99,8 +99,9 @@ public class MemberController {
 
     @PostMapping("email-check")
     public ResponseEntity emailCheck(@RequestParam("email") String email) {
+        System.out.println("email = " + email);
         String Email = memberService.isEmailInUse(email);
-        if (email.length() == 0) {
+        if (email.length() <= 10) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else if (Email == null) {
             return new ResponseEntity<>(HttpStatus.OK);
@@ -195,5 +196,21 @@ public class MemberController {
         return "redirect:/member/mypage";
     }
 
+    @GetMapping("/updateEmail")
+    public String updateEmail(HttpSession session, Model model) {
+        Long loginId = (Long) session.getAttribute("loginId");
+        MemberDTO memberDTO = memberService.findById(loginId);
+        model.addAttribute("member", memberDTO);
+        return "memberPages/memberEmailUpdate";
+    }
+
+    @PostMapping("/updateEmail")
+    public String updateEmail(HttpSession session, @RequestParam("email") String email, @RequestParam("domain") String domain) throws IOException {
+        Long loginId = (Long) session.getAttribute("loginId");
+        MemberDTO memberDTO = memberService.findById(loginId);
+        memberDTO.setEmail(email + domain);
+        memberService.updateEmail(memberDTO);
+        return "redirect:/member/mypage";
+    }
 
 }

@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)" />
+    <list default="true" id="f94a9bd0-ab95-4dd7-b0a2-62ad46833f28" name="Changes" comment="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26__5_37__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26__8_47__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26_오전_5_37_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-05-26_오전_8_47_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icia/market/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/member-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/memberSave.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/spring/CabbageMarket_project",
+    "last_opened_file_path": "C:/spring/secondHandMarket",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -186,6 +198,10 @@
       <workItem from="1684798802085" duration="19723000" />
       <workItem from="1684972012035" duration="17589000" />
       <workItem from="1685261092717" duration="43121000" />
+      <workItem from="1685383083989" duration="50000" />
+      <workItem from="1685383147505" duration="10000" />
+      <workItem from="1685460677349" duration="255000" />
+      <workItem from="1685749152703" duration="18926000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1684372349380</created>
@@ -313,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685383064396</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="10_회원 정보 수정 기능-3(비밀번호 수정 및 유효성 검사)">
+      <created>1685383091205</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685383091205</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -60,4 +60,8 @@ public class MemberRepository {
     public void updatePass(MemberDTO memberDTO) {
         sql.update("Member.updatePass", memberDTO);
     }
+
+    public void updateEmail(MemberDTO memberDTO) {
+        sql.update("Member.updateEmail", memberDTO);
+    }
 }
