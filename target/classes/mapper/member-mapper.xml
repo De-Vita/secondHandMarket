@@ -54,7 +54,9 @@
         update member_table set password = #{password} where id = #{id}
     </update>
 
-
+    <update id="updateEmail" parameterType="member">
+        update member_table set email = #{email} where id = #{id}
+    </update>
     
 </mapper>
 

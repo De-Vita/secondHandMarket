@@ -75,7 +75,7 @@
         </div>
         <span id="mail-auth-warn"></span>
     </div>
-
+    <br>
     <div class="row">
         <div class="col d-grid">
             <input type="submit" value="가입" class="btn btn-primary">
