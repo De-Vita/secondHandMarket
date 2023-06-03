@@ -16,7 +16,7 @@
   <div class="container">
       <h2>비밀번호 수정</h2>
       <hr>
-      <form action="/member/updatePass" method="post">
+      <form action="/member/updatePass" method="post" onsubmit="return password_update_check()">
           <table class="table table-bordered">
               <tr>
                   <th>현재 비밀번호</th>
@@ -127,6 +127,21 @@
             }
         })
         return pass;
+    }
+
+    const password_update_check = () => {
+        const isCurrentPasswordValid = current_password_check();
+        const isPasswordValid = password_check();
+        const isPasswordConfirmValid = password_confirm();
+        if (
+            isCurrentPasswordValid &&
+            isPasswordValid &&
+            isPasswordConfirmValid
+        ) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
